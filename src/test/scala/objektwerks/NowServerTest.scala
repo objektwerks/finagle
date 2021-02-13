@@ -3,6 +3,7 @@ package objektwerks
 import com.twitter.finagle.Http
 import com.twitter.util.{Await, Duration, Return, Throw}
 import com.typesafe.config.ConfigFactory
+
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
