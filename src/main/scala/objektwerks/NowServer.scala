@@ -9,7 +9,13 @@ object NowServer {
     val conf = ConfigFactory.load("now.conf")
     val port = conf.getString("port")
 
-    Await.ready( Http.serve(port, NowService.newInstance) )
+    val server = Http.serve(port, NowService.newInstance)
+    Await.ready( server )
+
+    sys.addShutdownHook {
+      server.close()
+      ()
+    }
     ()
   }
 }
