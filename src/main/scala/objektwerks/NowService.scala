@@ -7,7 +7,7 @@ import com.twitter.util.Future
 import java.time.Instant
 
 object NowService {
-  def newInstance: Service[Request, Response] =
+  def apply(): Service[Request, Response] =
     (request: Request) => Future.value {
       val response = Response(request.version, Status.Ok)
       response.contentString = Instant.now.toString

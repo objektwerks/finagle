@@ -12,8 +12,8 @@ class NowServerTest extends AnyFunSuite with Matchers {
   val host = conf.getString("host")
   val port = conf.getString("port")
 
-  val client = NowClient.newInstance(host, port)
-  val server = Http.serve(port, NowService.newInstance)
+  val client = NowClient(host, port)
+  val server = Http.serve(port, NowService())
 
   sys.addShutdownHook {
     client.close()
