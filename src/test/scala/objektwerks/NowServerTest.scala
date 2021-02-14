@@ -22,8 +22,7 @@ class NowServerTest extends AnyFunSuite with Matchers {
   }
 
   test("now") {
-    val request = NowClient.newRequest(host)
-    client(request).respond {
+    client.sendRequest.respond {
       case Return(response) =>
         response.contentString.nonEmpty shouldBe true
         println(s"*** NowServer response: ${response.contentString}")
