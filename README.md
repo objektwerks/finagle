@@ -2,6 +2,10 @@ Finagle
 -------
 >Finagle feature tests.
 
+JDK
+---
+>JDK 8 is required. See .sbtopts
+
 Test
 ----
 1. sbt clean test
