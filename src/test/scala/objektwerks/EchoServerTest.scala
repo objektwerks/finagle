@@ -7,8 +7,6 @@ import com.typesafe.config.ConfigFactory
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
-import java.time.Instant
-
 class EchoServerTest extends AnyFunSuite with Matchers {
   val conf = ConfigFactory.load("test.echo.conf")
   val host = conf.getString("host")
@@ -24,7 +22,7 @@ class EchoServerTest extends AnyFunSuite with Matchers {
   }
 
   test("echo") {
-    val message = Instant.now.toString
+    val message = client.newMessage
     client.sendMessage(message).respond {
       case Return(response) =>
         response shouldBe message
