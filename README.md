@@ -1,6 +1,6 @@
 Finagle
 -------
->Finagle feature tests.
+>Finagle http and thrift client/server tests.
 
 JDK
 ---
@@ -11,7 +11,7 @@ Thrift
 1. See /src/main/thrift/echo.service.thrift for IDL.
 2. See plugins.sbt for comment and scrooge plugin.
 3. sbt clean compile generates 3 source files in target/scala-2.13/src_managed/main/thrift/objektwerks
->It's not clear, at this point, the best practice(s) for using the generated source.
+4. Don't move the generated sources. Simply reference them in your code. See EchoServer and EchoClient.
 
 Test
 ----
@@ -20,4 +20,10 @@ Test
 Run
 ---
 1. sbt clean run
-2. curl -D - 127.0.0.1:7777
+>Multiple main classes detected. Select one to run:
+* [1] objektwerks.EchoServer
+* [2] objektwerks.NowServer
+>Enter number:
+
+1. EchoServer: REQUIRES THRIFT CLIENT!
+2. NowServer: curl -D - 127.0.0.1:7979
