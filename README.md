@@ -1,6 +1,6 @@
 Finagle
 -------
->Finagle http and thrift client/server tests.
+>Finagle http and thrift clients, servers and tests.
 
 JDK
 ---
