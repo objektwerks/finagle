@@ -25,6 +25,6 @@ Run
 * [2] objektwerks.NowServer
 >Enter number:
 
-1. EchoServer: Contains an embedded EchoClient. See console output!
+1. EchoServer: Contains an embedded EchoClient. See console output! Stops automatically.
 2. NowServer: curl -D - 127.0.0.1:7979
->Press Ctrl-C to stop a server.
+>Press Ctrl-C to stop the NowServer.
