@@ -8,7 +8,7 @@ object EchoClient {
 }
 
 class EchoClient(val host: String, val port: String) {
-  val methodPerEndpoint = Thrift.client.build[EchoService.MethodPerEndpoint](s"$host$port")
+  private val methodPerEndpoint = Thrift.client.build[EchoService.MethodPerEndpoint](s"$host$port")
 
   def sendMessage(message: String): Future[String] = methodPerEndpoint.echo(message)
 
