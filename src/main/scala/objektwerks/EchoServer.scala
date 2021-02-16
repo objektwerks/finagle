@@ -1,7 +1,7 @@
 package objektwerks
 
 import com.twitter.finagle.Thrift
-import com.twitter.util.{Await, Future, Return, Throw}
+import com.twitter.util.{Future, Return, Throw}
 import com.typesafe.config.ConfigFactory
 
 import java.time.Instant
@@ -17,21 +17,18 @@ object EchoServer {
     val port = conf.getString("port")
 
     val server = Thrift.server.serveIface(s"$host$port", new EchoServer())
-
     val client = EchoClient(host, port)
+
     val message = Instant.now.toString
     client.sendMessage(message).respond {
       case Return(response) => println(s"*** EchoClient ($message) to/from EchoServer ($response)")
       case Throw(error) => println(s"Failure: ${error.getMessage}")
     }
 
-    Await.ready(server)
+    Thread.sleep(3000L)
 
-    sys.addShutdownHook {
-      client.close()
-      server.close()
-      ()
-    }
+    client.close()
+    server.close()
     ()
   }
 }
