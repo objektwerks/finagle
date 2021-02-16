@@ -8,7 +8,7 @@ import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers
 
 class NowServerTest extends AnyFunSuite with Matchers {
-  val conf = ConfigFactory.load("test.conf")
+  val conf = ConfigFactory.load("test.now.conf")
   val host = conf.getString("host")
   val port = conf.getString("port")
 
