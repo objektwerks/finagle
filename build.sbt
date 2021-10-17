@@ -11,6 +11,6 @@ libraryDependencies ++= {
     "org.apache.thrift" % "libthrift" % "0.13.0",
     "com.typesafe" % "config" % "1.4.1",
     "ch.qos.logback" % "logback-classic" % "1.2.5",
-    "org.scalatest" %% "scalatest" % "3.2.9" % Test
+    "org.scalatest" %% "scalatest" % "3.2.10" % Test
   )
 }
