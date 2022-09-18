@@ -3,7 +3,7 @@ organization := "objektwerks"
 version := "0.1-SNAPSHOT"
 scalaVersion := "2.13.8"
 libraryDependencies ++= {
-  val twitterVersion = "22.4.0"
+  val twitterVersion = "22.7.0"
   Seq(
     "com.twitter" %% "finagle-http" % twitterVersion,
     "com.twitter" %% "finagle-thrift" % twitterVersion,
