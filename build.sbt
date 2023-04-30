@@ -10,7 +10,7 @@ libraryDependencies ++= {
     "com.twitter" %% "scrooge-core" % twitterVersion,
     "org.apache.thrift" % "libthrift" % "0.18.1",
     "com.typesafe" % "config" % "1.4.2",
-    "ch.qos.logback" % "logback-classic" % "1.4.6",
+    "ch.qos.logback" % "logback-classic" % "1.4.7",
     "org.scalatest" %% "scalatest" % "3.2.15" % Test
   )
 }
