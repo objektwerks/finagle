@@ -1,7 +1,7 @@
 name := "finagle"
 organization := "objektwerks"
 version := "0.1-SNAPSHOT"
-scalaVersion := "2.13.14"
+scalaVersion := "2.13.15"
 libraryDependencies ++= {
   val twitterVersion = "22.12.0"
   Seq(
